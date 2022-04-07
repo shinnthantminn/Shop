@@ -1,0 +1,20 @@
+[
+  {
+    "_id": "624f28268fcd4804b71e4001",
+    "name": "Shinn Thant Minn",
+    "email": "shinthantmin32@gmail.com",
+    "phone": "+959952253186",
+    "password": "$2a$10$5GTc37w2ia3/asGCPbuK7.lkHH6fdDGJRV8NAPgtY.5OtWm.Fih6e",
+    "created": "2022-04-07T18:06:30.135Z",
+    "__v": 0
+  },
+  {
+    "_id": "624f28268fcd4804b71e4002",
+    "name": "Htet Kyawt Linn",
+    "email": "htethtet@gmail.com",
+    "phone": "+959420306085",
+    "password": "$2a$10$7IfWLPnwHxJjSt0Cana1PuN0X0tGd8ZfvgLUc2fnVlLY3dCqvGL8K",
+    "created": "2022-04-07T18:06:30.135Z",
+    "__v": 0
+  }
+]
