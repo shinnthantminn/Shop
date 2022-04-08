@@ -36,13 +36,18 @@ module.exports = {
   addPermit: async (req, res, next) => {
     const roleId = await DB.findById(req.body.roleId);
     const permitId = await permitDB.findById(req.body.permitId);
-    if (roleId && permitId) {
-      await DB.findByIdAndUpdate(roleId._id, {
-        $push: { permit: permitId._id },
-      });
-      const role = await DB.find().populate("permit", "-__v -_id -created");
-      fMsg(res, "permit Add Complete", role);
-    } else next(new Error("something was wrong"));
+    const check = roleId.permit.find((i) => i.equals(permitId._id));
+    if (check) {
+      next(new Error("this permit was already exist"));
+    } else {
+      if (roleId && permitId) {
+        await DB.findByIdAndUpdate(roleId._id, {
+          $push: { permit: permitId._id },
+        });
+        const role = await DB.find().populate("permit", "-__v -_id -created");
+        fMsg(res, "permit Add Complete", role);
+      } else next(new Error("something was wrong"));
+    }
   },
   removePermit: async (req, res, next) => {
     const roleId = await DB.findById(req.body.roleId);

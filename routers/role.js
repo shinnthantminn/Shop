@@ -18,8 +18,14 @@ router
     controller.add
   );
 
-router.post("/add/permit", [validateUniquePermit(DB), controller.addPermit]);
-router.delete("/remove/permit", [controller.removePermit]);
+router.post("/add/permit", [
+  validateBody(schemaBody.role.addPermit),
+  controller.addPermit,
+]);
+router.delete("/remove/permit", [
+  validateBody(schemaBody.role.addPermit),
+  controller.removePermit,
+]);
 
 router
   .route("/:id")

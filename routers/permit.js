@@ -4,6 +4,7 @@ const {
   validateBody,
   validateUnique,
   validateParams,
+  validateToken,
 } = require("../ultis/validator");
 const { schemaBody, schemaParams } = require("../ultis/joiSchema");
 const DB = require("../models/permit");
@@ -12,6 +13,7 @@ router
   .route("/")
   .get(controller.all)
   .post(
+    validateToken(),
     validateBody(schemaBody.permit.body),
     validateUnique(DB, "name"),
     controller.add

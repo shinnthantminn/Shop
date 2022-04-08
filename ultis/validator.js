@@ -1,3 +1,5 @@
+const { decode } = require("./helper");
+const { get } = require("./Redis");
 module.exports = {
   validateBody: (schema) => {
     return async (req, res, next) => {
@@ -5,6 +7,19 @@ module.exports = {
       if (result.error) {
         next(new Error(result.error.details[0].message));
       } else next();
+    };
+  },
+  validateToken: () => {
+    return async (req, res, next) => {
+      const token = req.headers.authorization;
+      if (token) {
+        const user = decode(token.split(" ")[1]);
+        const person = await get(user._id);
+        if (person) {
+          req.user = person;
+          next();
+        } else next(new Error("Tokenization Error"));
+      } else next(new Error("Tokenization Error"));
     };
   },
   validateUnique: (db, ...arr) => {
@@ -38,23 +53,13 @@ module.exports = {
       } else next();
     };
   },
-  validateUniquePermit: (db) => {
-    return async (req, res, next) => {
-      const item = await db.findById(req.body.roleId);
-      if (item.permit.length === 0) {
+  validateRole: (role) => {
+    return (req, res, next) => {
+      const user = JSON.parse(req.user);
+      const check = user.role.find((i) => i.name === role);
+      if (check) {
         next();
-      } else {
-        const num = [];
-        item.permit.map((i) => {
-          const permit = i.toString();
-          num.push(permit);
-          if (req.body.permitId === permit) {
-            next(new Error("this permit was already in use"));
-          } else if (num.length === item.permit.length) {
-            next();
-          }
-        });
-      }
+      } else next(new Error("you have no permission"));
     };
   },
 };
