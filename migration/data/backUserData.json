@@ -1,0 +1,35 @@
+[
+  {
+    "_id": "625430736f494685679ffe9f",
+    "name": "Shinn Thant Minn",
+    "email": "shinthantmin32@gmail.com",
+    "phone": "+959952253186",
+    "password": "$2a$10$M0g.eaL/o6TZ195zt8tgOeDpTQKvvWbpcJQoYg3Qnon1ZE5S9I1z2",
+    "role": ["625432dabef19aee3c70ec12"],
+    "permit": [],
+    "create": "2022-04-11T13:43:15.055Z",
+    "__v": 0
+  },
+  {
+    "_id": "625430736f494685679ffea1",
+    "name": "Htet Kyawt Linn",
+    "email": "htethtet@gmail.com",
+    "phone": "+959420306085",
+    "password": "$2a$10$CMvXG6scbk0RVC086w6dA.iUtZBEIdWo.s4Y.Fc7HXm6GMVCrmFRG",
+    "role": [],
+    "permit": [],
+    "create": "2022-04-11T13:43:15.055Z",
+    "__v": 0
+  },
+  {
+    "_id": "625430736f494685679ffea3",
+    "name": "Shar Natha Linn",
+    "email": "sharshar@gmail.com",
+    "phone": "+959123123123",
+    "password": "$2a$10$uaWelSfVdCH8TRWxuRrviOuGxXmeQ9J.RujWfLP8LwvVhKR7jxGp6",
+    "role": [],
+    "permit": [],
+    "create": "2022-04-11T13:43:15.055Z",
+    "__v": 0
+  }
+]

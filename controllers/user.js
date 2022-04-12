@@ -1,86 +1,94 @@
-const DB = require("../models/user");
-const roleDB = require("../models/role");
-const permitDB = require("../models/permit");
-const { fMsg, encode, compare, token } = require("../ultis/helper");
-const { set } = require("../ultis/Redis");
+const DB = require("../model/user");
+const roleDB = require("../model/role");
+const permitDB = require("../model/permit");
+const helper = require("../ulits/helper");
 
 module.exports = {
+  all: async (req, res, next) => {
+    const user = await DB.find().populate("role permit", "-__v -created");
+    helper.fMsg(res, "all user from server", user);
+  },
   register: async (req, res, next) => {
-    req.body.password = encode(req.body.password);
-    await new DB(req.body).save();
-    const user = await DB.find();
-    fMsg(res, "register Complete", user);
+    req.body.password = helper.encode(req.body.password);
+    const newUser = await new DB(req.body).save();
+    helper.fMsg(res, "register complete", newUser);
   },
   login: async (req, res, next) => {
-    const user = await DB.findOne({ email: req.body.email })
-      .populate("role permit")
-      .select("-__v");
-    if (user) {
-      if (compare(req.body.password, user.password)) {
-        const data = user.toObject();
+    const result = await DB.findOne({ email: req.body.email }).populate(
+      "role permit",
+      "-created -__v "
+    );
+    if (result) {
+      if (helper.compare(req.body.password, result.password)) {
+        const data = result.toObject();
         delete data.password;
-        data.token = token(data);
-        await set(data._id, data);
-        fMsg(res, "login successful", data);
-      } else next(new Error("this password is wrong"));
-    } else next(new Error("this email wasn't register"));
+        data.token = helper.token(data);
+        helper.set(data._id, data);
+        helper.fMsg(res, "login successfull", data);
+      } else next(new Error("password Wrong"));
+    } else next(new Error("this email was not existing in our server"));
   },
   addRole: async (req, res, next) => {
-    const user = await DB.findById(req.body.userId);
-    const role = await roleDB.findById(req.body.roleId);
-    const check = user.role.find((i) => i.equals(role._id));
-    if (check) {
-      next(new Error("this role is exist"));
-    } else {
-      if (user && role) {
-        await DB.findByIdAndUpdate(user._id, {
-          $push: { role: role._id },
+    const roleId = await roleDB.findById(req.body.roleId);
+    const userId = await DB.findById(req.body.userId);
+    if (roleId && userId) {
+      const check = userId.role.find((i) => i.equals(roleId._id));
+      if (check) {
+        next(new Error("this role was existing in our server"));
+      } else {
+        await DB.findByIdAndUpdate(userId._id, {
+          $push: { role: roleId._id },
         });
-        const roleAdded = await DB.findById(user._id).populate("role", "-__v");
-        fMsg(res, "role add complete", roleAdded);
-      }
-      next(new Error("something was wrong"));
-    }
-  },
-  removeRole: async (req, res, next) => {
-    const user = await DB.findById(req.body.userId);
-
-    const check = user.role.find((i) => i.equals(req.body.roleId));
-    if (check) {
-      await DB.findByIdAndUpdate(user._id, {
-        $pull: { role: req.body.roleId },
-      });
-      const roleRemove = await DB.findById(user._id);
-      fMsg(res, "role remove complete", roleRemove);
-    } else next(new Error("this role is doesn't exist"));
-  },
-  addPermit: async (req, res, next) => {
-    const user = await DB.findById(req.body.userId);
-    const permit = await permitDB.findById(req.body.permitId);
-    const check = user.permit.find((i) => i.equals(permit._id));
-    if (check) {
-      next(new Error("this permit was exist"));
-    } else {
-      if (user && permit) {
-        await DB.findByIdAndUpdate(user._id, { $push: { permit: permit._id } });
-        const newUser = await DB.findById(req.body.userId).populate(
-          "permit",
+        const addRole = await DB.findById(userId._id).populate(
+          "role permit",
           "-__v"
         );
-        fMsg(res, "permit add Complete", newUser);
-      } else next(new Error("something Error"));
-    }
+        helper.fMsg(res, "role added complete", addRole);
+      }
+    } else next(new Error("something was wrong"));
+  },
+  removeRole: async (req, res, next) => {
+    const userId = await DB.findById(req.body.userId);
+
+    if (userId) {
+      await DB.findByIdAndUpdate(userId._id, {
+        $pull: { role: req.body.roleId },
+      });
+      const newUser = await DB.findById(userId._id);
+      helper.fMsg(res, "remove role complete", newUser);
+    } else next(new Error("no user whit that userId"));
+  },
+  addPermit: async (req, res, next) => {
+    const userId = await DB.findById(req.body.userId);
+    const permitId = await permitDB.findById(req.body.permitId);
+    if (userId && permitId) {
+      const finder = userId.permit.find((i) => i.equals(permitId._id));
+      if (finder) {
+        next(new Error("this permit was existing in our server"));
+      } else {
+        await DB.findByIdAndUpdate(userId._id, {
+          $push: { permit: permitId._id },
+        });
+        const user = await DB.find(userId._id).populate(
+          "role permit",
+          "-__v -created"
+        );
+        helper.fMsg(res, "permit add complete", user);
+      }
+    } else next(new Error("something was wrong"));
   },
   removePermit: async (req, res, next) => {
     const user = await DB.findById(req.body.userId);
-    const check = user.permit.find((i) => i.equals(req.body.permitId));
-
-    if (check) {
+    if (user) {
       await DB.findByIdAndUpdate(user._id, {
         $pull: { permit: req.body.permitId },
       });
-      const newUser = await DB.findById(req.body.userId);
-      fMsg(res, "permit remove Complete", newUser);
-    } else next(new Error("this permit doesn't exist"));
+      const newUser = await DB.findById(user._id).populate(
+        "role permit",
+        "-__v -created"
+      );
+      console.log(newUser);
+      helper.fMsg(res, "permit remove complete", newUser);
+    } else next(new Error("no your found"));
   },
 };

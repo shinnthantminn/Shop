@@ -2,21 +2,16 @@ require("dotenv").config();
 const express = require("express"),
   app = express(),
   mongoose = require("mongoose"),
-  fileUpload = require("express-fileupload"),
-  cors = require("cors"),
-  Port = process.env.PORT || 3000,
-  url = `mongodb://127.0.0.1:27017/${process.env.DB_NAME}`;
+  fileUpload = require("express-fileupload");
 
-mongoose.connect(url);
+mongoose.connect(`mongodb://127.0.0.1:27017/${process.env.DB_NAME}`);
 
-app.use(fileUpload());
 app.use(express.json());
-app.use(cors());
+app.use(fileUpload());
 
 const permitRouter = require("./routers/permit");
 const roleRouter = require("./routers/role");
 const userRouter = require("./routers/user");
-const { migrator, backup } = require("./migrations/migrator");
 
 app.use("/permit", permitRouter);
 app.use("/role", roleRouter);
@@ -24,7 +19,7 @@ app.use("/user", userRouter);
 
 app.get("*", (req, res, next) => {
   res.status(200).json({
-    msg: "this route is no Valid in our server",
+    msg: "this route is not available in our server",
   });
 });
 
@@ -36,13 +31,15 @@ app.use((err, req, res, next) => {
   });
 });
 
-const migration = async () => {
-  await migrator();
-  // await backup();
+const migration = require("./migration/migrator");
+
+const setting = async () => {
+  await migration.migrator();
+  // await migration.backUp();
 };
 
-migration();
+setting();
 
-app.listen(Port, () => {
-  console.log(`server running from http://127.0.0.1:${Port}`);
+app.listen(process.env.PORT, () => {
+  console.log(`i am running from http://127.0.0.1:${process.env.PORT}`);
 });

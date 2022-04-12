@@ -1,52 +1,52 @@
 const router = require("express").Router();
 const controller = require("../controllers/user");
-const { schemaParams, schemaBody } = require("../ultis/joiSchema");
 const {
-  validateParams,
   validateBody,
   validateUnique,
   validateToken,
   validateRole,
-  validateUniquePermit,
-} = require("../ultis/validator");
-const DB = require("../models/user");
+  validateRoleV2,
+} = require("../ulits/validator");
+const { schemaBody } = require("../ulits/joiSchema");
+const userDB = require("../model/user");
 
-router.route("/").get().post(validateBody(schemaBody.login), controller.login);
+router
+  .route("/")
+  .get(controller.all)
+  .post(validateBody(schemaBody.user.login), controller.login);
 
 router.post("/register", [
-  validateUnique(DB, "name", "email", "phone"),
   validateBody(schemaBody.user.body),
+  validateUnique(userDB, "email", "phone"),
   controller.register,
 ]);
 
 router.post("/add/role", [
+  validateBody(schemaBody.user.role),
   validateToken(),
-  validateRole("CEO"),
-  validateBody(schemaBody.user.addRole),
+  validateRole("CFO", "CEO"),
   controller.addRole,
 ]);
 
 router.delete("/remove/role", [
+  validateBody(schemaBody.user.role),
   validateToken(),
-  validateRole("CEO"),
-  validateBody(schemaBody.user.addRole),
+  validateRoleV2("CFO", "CEO"),
   controller.removeRole,
 ]);
 
 router.post("/add/permit", [
+  validateBody(schemaBody.user.permit),
   validateToken(),
-  validateRole("CEO"),
-  validateBody(schemaBody.user.addPermit),
+  validateRoleV2("CEO", "CFO", "Manager"),
   controller.addPermit,
 ]);
 
 router.delete("/remove/permit", [
+  validateBody(schemaBody.user.permit),
   validateToken(),
-  validateRole("CEO"),
-  validateBody(schemaBody.user.addPermit),
+  validateRoleV2("CEO", "CFO", "Manager"),
   controller.removePermit,
 ]);
-
-router.route("/:id").get().patch().delete();
 
 module.exports = router;

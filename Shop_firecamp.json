@@ -1,0 +1,1318 @@
+{
+    "meta": {
+        "__export_time": 1649739993587,
+        "__export_app": "firecamp_v2.6.1 ",
+        "__export_version": 1
+    },
+    "project": {
+        "name": "Shop",
+        "description": "",
+        "auth": {},
+        "scripts": {
+            "pre": "",
+            "post": "",
+            "test": ""
+        },
+        "meta": {
+            "active_auth": "no_auth"
+        }
+    },
+    "modules": [
+        {
+            "name": "PermitManagements",
+            "auth": {
+                "inherit": {}
+            },
+            "scripts": {
+                "pre": "",
+                "post": "",
+                "test": ""
+            },
+            "requests": [
+                {
+                    "meta": {
+                        "name": "Add Permit",
+                        "description": "",
+                        "active_auth": "no_auth",
+                        "type": "api",
+                        "version": "1.0"
+                    },
+                    "url": {
+                        "slashes": true,
+                        "protocol": "http:",
+                        "hash": "",
+                        "pathname": "/permit",
+                        "auth": "",
+                        "host": "127.0.0.1:3000",
+                        "port": "3000",
+                        "hostname": "127.0.0.1",
+                        "password": "",
+                        "username": "",
+                        "origin": "http://127.0.0.1:3000",
+                        "href": "http://127.0.0.1:3000/permit",
+                        "query_params": [],
+                        "path_params": []
+                    },
+                    "method": "POST",
+                    "headers": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json",
+                            "type": "text",
+                            "disable": false
+                        }
+                    ],
+                    "config": {
+                        "ORIGIN": "",
+                        "USERAGENT": "",
+                        "TIMEOUT_MS": 0,
+                        "REJECT_UNAUTHORIZED": false,
+                        "FOLLOWLOCATION": true,
+                        "MAXREDIRS": -1,
+                        "HTTP_VERSION": "V2Tls"
+                    },
+                    "scripts": {
+                        "pre": "",
+                        "post": "",
+                        "test": ""
+                    },
+                    "auth": {
+                        "bearer": {
+                            "token": "",
+                            "prefix": ""
+                        }
+                    },
+                    "bodies": [
+                        {
+                            "name": "Default",
+                            "meta": {
+                                "active_body_type": "application/json",
+                                "is_default": true
+                            },
+                            "body": {
+                                "application/json": {
+                                    "value": "{\n    \"name\":\"NewBie\"\n}",
+                                    "headers": []
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "meta": {
+                        "name": "get all permit",
+                        "description": "",
+                        "active_auth": "bearer",
+                        "type": "api",
+                        "version": "1.0"
+                    },
+                    "url": {
+                        "slashes": false,
+                        "protocol": "",
+                        "hash": "",
+                        "pathname": "127.0.0.1:3000/permit",
+                        "auth": "",
+                        "host": "",
+                        "port": "",
+                        "hostname": "",
+                        "password": "",
+                        "username": "",
+                        "origin": "null",
+                        "href": "127.0.0.1:3000/permit",
+                        "query_params": [],
+                        "path_params": []
+                    },
+                    "method": "GET",
+                    "headers": [],
+                    "config": {
+                        "ORIGIN": "",
+                        "USERAGENT": "",
+                        "TIMEOUT_MS": 0,
+                        "REJECT_UNAUTHORIZED": false,
+                        "FOLLOWLOCATION": true,
+                        "MAXREDIRS": -1,
+                        "HTTP_VERSION": "V2Tls"
+                    },
+                    "scripts": {
+                        "pre": "",
+                        "post": "",
+                        "test": ""
+                    },
+                    "auth": {
+                        "bearer": {
+                            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjUwNmRhMzRiMDhjZTJkMDhkM2I3MTgiLCJuYW1lIjoiSHRldCBLeWF3dCBMaW5uIiwiZW1haWwiOiJodGV0aHRldEBnbWFpbC5jb20iLCJwaG9uZSI6Iis5NTk0MjAzMDYwODUiLCJyb2xlIjpbeyJfaWQiOiI2MjUwNmRhMzRiMDhjZTJkMDhkM2I3MTEiLCJuYW1lIjoiQ0ZPIiwicGVybWl0IjpbXSwiY3JlYXRlZCI6IjIwMjItMDQtMDhUMTc6MTU6MTUuNDY5WiIsIl9fdiI6MH1dLCJwZXJtaXQiOltdLCJjcmVhdGVkIjoiMjAyMi0wNC0wOFQxNzoxNToxNS40NzVaIiwiaWF0IjoxNjQ5NDQ5MDEzLCJleHAiOjE2NDk0NTI2MTN9.Ro1aZOhgFkHwycKklqNpHB7YsLQBJ8Y8xImgLIKFOME",
+                            "prefix": ""
+                        }
+                    },
+                    "bodies": [
+                        {
+                            "name": "Default",
+                            "meta": {
+                                "active_body_type": "noBody",
+                                "is_default": true
+                            },
+                            "body": {}
+                        }
+                    ]
+                },
+                {
+                    "meta": {
+                        "name": "single permit get by id",
+                        "description": "",
+                        "active_auth": "inherit",
+                        "type": "api",
+                        "version": "1.0"
+                    },
+                    "url": {
+                        "slashes": true,
+                        "protocol": "http:",
+                        "hash": "",
+                        "pathname": "/permit/6253c4406e5924fcfcb5e865",
+                        "auth": "",
+                        "host": "127.0.0.1:3000",
+                        "port": "3000",
+                        "hostname": "127.0.0.1",
+                        "password": "",
+                        "username": "",
+                        "origin": "http://127.0.0.1:3000",
+                        "href": "http://127.0.0.1:3000/permit/6253c4406e5924fcfcb5e865",
+                        "query_params": [],
+                        "path_params": []
+                    },
+                    "method": "GET",
+                    "headers": [],
+                    "config": {
+                        "ORIGIN": "",
+                        "USERAGENT": "",
+                        "TIMEOUT_MS": 0,
+                        "REJECT_UNAUTHORIZED": false,
+                        "FOLLOWLOCATION": true,
+                        "MAXREDIRS": -1,
+                        "HTTP_VERSION": "V2Tls"
+                    },
+                    "scripts": {
+                        "pre": "",
+                        "post": "",
+                        "test": ""
+                    },
+                    "bodies": [
+                        {
+                            "name": "Default",
+                            "meta": {
+                                "active_body_type": "noBody",
+                                "is_default": true
+                            },
+                            "body": {}
+                        }
+                    ]
+                },
+                {
+                    "meta": {
+                        "name": "Update Permit",
+                        "description": "",
+                        "active_auth": "inherit",
+                        "type": "api",
+                        "version": "1.0"
+                    },
+                    "url": {
+                        "slashes": true,
+                        "protocol": "http:",
+                        "hash": "",
+                        "pathname": "/permit/6253c4406e5924fcfcb5e865",
+                        "auth": "",
+                        "host": "127.0.0.1:3000",
+                        "port": "3000",
+                        "hostname": "127.0.0.1",
+                        "password": "",
+                        "username": "",
+                        "origin": "http://127.0.0.1:3000",
+                        "href": "http://127.0.0.1:3000/permit/6253c4406e5924fcfcb5e865",
+                        "query_params": [],
+                        "path_params": []
+                    },
+                    "method": "PATCH",
+                    "headers": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json",
+                            "type": "text",
+                            "disable": false
+                        }
+                    ],
+                    "config": {
+                        "ORIGIN": "",
+                        "USERAGENT": "",
+                        "TIMEOUT_MS": 0,
+                        "REJECT_UNAUTHORIZED": false,
+                        "FOLLOWLOCATION": true,
+                        "MAXREDIRS": -1,
+                        "HTTP_VERSION": "V2Tls"
+                    },
+                    "scripts": {
+                        "pre": "",
+                        "post": "",
+                        "test": ""
+                    },
+                    "bodies": [
+                        {
+                            "name": "Default",
+                            "meta": {
+                                "active_body_type": "application/json",
+                                "is_default": true
+                            },
+                            "body": {
+                                "application/json": {
+                                    "value": "{\n    \"name\":\"NewBie\"\n}",
+                                    "headers": []
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "meta": {
+                        "name": "delete permit",
+                        "description": "",
+                        "active_auth": "inherit",
+                        "type": "api",
+                        "version": "1.0"
+                    },
+                    "url": {
+                        "slashes": true,
+                        "protocol": "http:",
+                        "hash": "",
+                        "pathname": "/permit/6253c4406e5924fcfcb5e865",
+                        "auth": "",
+                        "host": "127.0.0.1:3000",
+                        "port": "3000",
+                        "hostname": "127.0.0.1",
+                        "password": "",
+                        "username": "",
+                        "origin": "http://127.0.0.1:3000",
+                        "href": "http://127.0.0.1:3000/permit/6253c4406e5924fcfcb5e865",
+                        "query_params": [],
+                        "path_params": []
+                    },
+                    "method": "DELETE",
+                    "headers": [],
+                    "config": {
+                        "ORIGIN": "",
+                        "USERAGENT": "",
+                        "TIMEOUT_MS": 0,
+                        "REJECT_UNAUTHORIZED": false,
+                        "FOLLOWLOCATION": true,
+                        "MAXREDIRS": -1,
+                        "HTTP_VERSION": "V2Tls"
+                    },
+                    "scripts": {
+                        "pre": "",
+                        "post": "",
+                        "test": ""
+                    },
+                    "bodies": [
+                        {
+                            "name": "Default",
+                            "meta": {
+                                "active_body_type": "noBody",
+                                "is_default": true
+                            },
+                            "body": {}
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "roleManagements",
+            "auth": {
+                "bearer": {
+                    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjU1MDUzM2UxMzNmMDVjZDYwYjdhNmYiLCJuYW1lIjoiU2hpbm4gVGhhbnQgTWlubiIsImVtYWlsIjoic2hpbnRoYW50bWluMzJAZ21haWwuY29tIiwicGhvbmUiOiIrOTU5OTUyMjUzMTg2Iiwicm9sZSI6W3siX2lkIjoiNjI1NGQxZTFiY2Y2N2ExOGZjZTg0YTZlIiwibmFtZSI6IkNFTyIsInBlcm1pdCI6W119XSwicGVybWl0IjpbXSwiY3JlYXRlIjoiMjAyMi0wNC0xMlQwNDo1MDo1OC42NjhaIiwiX192IjowLCJpYXQiOjE2NDk3Mzk4MjgsImV4cCI6MTY0OTc0MzQyOH0.piVrgLlg0qKGQ34oO6GyFu_is4OqZsPdqEiaYHgWmlg",
+                    "prefix": ""
+                }
+            },
+            "scripts": {
+                "pre": "",
+                "post": "",
+                "test": ""
+            },
+            "requests": [
+                {
+                    "meta": {
+                        "name": "add new Role",
+                        "description": "",
+                        "active_auth": "inherit",
+                        "type": "api",
+                        "version": "1.0"
+                    },
+                    "url": {
+                        "slashes": true,
+                        "protocol": "http:",
+                        "hash": "",
+                        "pathname": "/role",
+                        "auth": "",
+                        "host": "127.0.0.1:3000",
+                        "port": "3000",
+                        "hostname": "127.0.0.1",
+                        "password": "",
+                        "username": "",
+                        "origin": "http://127.0.0.1:3000",
+                        "href": "http://127.0.0.1:3000/role",
+                        "query_params": [],
+                        "path_params": []
+                    },
+                    "method": "POST",
+                    "headers": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json",
+                            "type": "text",
+                            "disable": false
+                        }
+                    ],
+                    "config": {
+                        "ORIGIN": "",
+                        "USERAGENT": "",
+                        "TIMEOUT_MS": 0,
+                        "REJECT_UNAUTHORIZED": false,
+                        "FOLLOWLOCATION": true,
+                        "MAXREDIRS": -1,
+                        "HTTP_VERSION": "V2Tls"
+                    },
+                    "scripts": {
+                        "pre": "",
+                        "post": "",
+                        "test": ""
+                    },
+                    "bodies": [
+                        {
+                            "name": "Default",
+                            "meta": {
+                                "active_body_type": "application/json",
+                                "is_default": true
+                            },
+                            "body": {
+                                "application/json": {
+                                    "value": "{\n    \"name\":\"Manager\"\n}",
+                                    "headers": []
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "meta": {
+                        "name": "all role from server",
+                        "description": "",
+                        "active_auth": "inherit",
+                        "type": "api",
+                        "version": "1.0"
+                    },
+                    "url": {
+                        "slashes": true,
+                        "protocol": "http:",
+                        "hash": "",
+                        "pathname": "/role",
+                        "auth": "",
+                        "host": "127.0.0.1:3000",
+                        "port": "3000",
+                        "hostname": "127.0.0.1",
+                        "password": "",
+                        "username": "",
+                        "origin": "http://127.0.0.1:3000",
+                        "href": "http://127.0.0.1:3000/role",
+                        "query_params": [],
+                        "path_params": []
+                    },
+                    "method": "GET",
+                    "headers": [],
+                    "config": {
+                        "ORIGIN": "",
+                        "USERAGENT": "",
+                        "TIMEOUT_MS": 0,
+                        "REJECT_UNAUTHORIZED": false,
+                        "FOLLOWLOCATION": true,
+                        "MAXREDIRS": -1,
+                        "HTTP_VERSION": "V2Tls"
+                    },
+                    "scripts": {
+                        "pre": "",
+                        "post": "",
+                        "test": ""
+                    },
+                    "bodies": [
+                        {
+                            "name": "Default",
+                            "meta": {
+                                "active_body_type": "noBody",
+                                "is_default": true
+                            },
+                            "body": {}
+                        }
+                    ]
+                },
+                {
+                    "meta": {
+                        "name": "single role get by id",
+                        "description": "",
+                        "active_auth": "inherit",
+                        "type": "api",
+                        "version": "1.0"
+                    },
+                    "url": {
+                        "slashes": true,
+                        "protocol": "http:",
+                        "hash": "",
+                        "pathname": "/role/6253d2f6719fd66d269d2854",
+                        "auth": "",
+                        "host": "127.0.0.1:3000",
+                        "port": "3000",
+                        "hostname": "127.0.0.1",
+                        "password": "",
+                        "username": "",
+                        "origin": "http://127.0.0.1:3000",
+                        "href": "http://127.0.0.1:3000/role/6253d2f6719fd66d269d2854",
+                        "query_params": [],
+                        "path_params": []
+                    },
+                    "method": "GET",
+                    "headers": [],
+                    "config": {
+                        "ORIGIN": "",
+                        "USERAGENT": "",
+                        "TIMEOUT_MS": 0,
+                        "REJECT_UNAUTHORIZED": false,
+                        "FOLLOWLOCATION": true,
+                        "MAXREDIRS": -1,
+                        "HTTP_VERSION": "V2Tls"
+                    },
+                    "scripts": {
+                        "pre": "",
+                        "post": "",
+                        "test": ""
+                    },
+                    "bodies": [
+                        {
+                            "name": "Default",
+                            "meta": {
+                                "active_body_type": "noBody",
+                                "is_default": true
+                            },
+                            "body": {}
+                        }
+                    ]
+                },
+                {
+                    "meta": {
+                        "name": "patch role to server",
+                        "description": "",
+                        "active_auth": "inherit",
+                        "type": "api",
+                        "version": "1.0"
+                    },
+                    "url": {
+                        "slashes": true,
+                        "protocol": "http:",
+                        "hash": "",
+                        "pathname": "/role/6253d314719fd66d269d2862",
+                        "auth": "",
+                        "host": "127.0.0.1:3000",
+                        "port": "3000",
+                        "hostname": "127.0.0.1",
+                        "password": "",
+                        "username": "",
+                        "origin": "http://127.0.0.1:3000",
+                        "href": "http://127.0.0.1:3000/role/6253d314719fd66d269d2862",
+                        "query_params": [],
+                        "path_params": []
+                    },
+                    "method": "PATCH",
+                    "headers": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json",
+                            "type": "text",
+                            "disable": false
+                        }
+                    ],
+                    "config": {
+                        "ORIGIN": "",
+                        "USERAGENT": "",
+                        "TIMEOUT_MS": 0,
+                        "REJECT_UNAUTHORIZED": false,
+                        "FOLLOWLOCATION": true,
+                        "MAXREDIRS": -1,
+                        "HTTP_VERSION": "V2Tls"
+                    },
+                    "scripts": {
+                        "pre": "",
+                        "post": "",
+                        "test": ""
+                    },
+                    "bodies": [
+                        {
+                            "name": "Default",
+                            "meta": {
+                                "active_body_type": "application/json",
+                                "is_default": true
+                            },
+                            "body": {
+                                "application/json": {
+                                    "value": "{\n    \"name\":\"NEWBIE\"\n}",
+                                    "headers": []
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "meta": {
+                        "name": "drop role",
+                        "description": "",
+                        "active_auth": "inherit",
+                        "type": "api",
+                        "version": "1.0"
+                    },
+                    "url": {
+                        "slashes": true,
+                        "protocol": "http:",
+                        "hash": "",
+                        "pathname": "/role/6253d314719fd66d269d2862",
+                        "auth": "",
+                        "host": "127.0.0.1:3000",
+                        "port": "3000",
+                        "hostname": "127.0.0.1",
+                        "password": "",
+                        "username": "",
+                        "origin": "http://127.0.0.1:3000",
+                        "href": "http://127.0.0.1:3000/role/6253d314719fd66d269d2862",
+                        "query_params": [],
+                        "path_params": []
+                    },
+                    "method": "DELETE",
+                    "headers": [],
+                    "config": {
+                        "ORIGIN": "",
+                        "USERAGENT": "",
+                        "TIMEOUT_MS": 0,
+                        "REJECT_UNAUTHORIZED": false,
+                        "FOLLOWLOCATION": true,
+                        "MAXREDIRS": -1,
+                        "HTTP_VERSION": "V2Tls"
+                    },
+                    "scripts": {
+                        "pre": "",
+                        "post": "",
+                        "test": ""
+                    },
+                    "bodies": [
+                        {
+                            "name": "Default",
+                            "meta": {
+                                "active_body_type": "noBody",
+                                "is_default": true
+                            },
+                            "body": {}
+                        }
+                    ]
+                },
+                {
+                    "meta": {
+                        "name": "add permit to role",
+                        "description": "",
+                        "active_auth": "inherit",
+                        "type": "api",
+                        "version": "1.0"
+                    },
+                    "url": {
+                        "slashes": true,
+                        "protocol": "http:",
+                        "hash": "",
+                        "pathname": "/role/add/permit",
+                        "auth": "",
+                        "host": "127.0.0.1:3000",
+                        "port": "3000",
+                        "hostname": "127.0.0.1",
+                        "password": "",
+                        "username": "",
+                        "origin": "http://127.0.0.1:3000",
+                        "href": "http://127.0.0.1:3000/role/add/permit",
+                        "query_params": [],
+                        "path_params": []
+                    },
+                    "method": "POST",
+                    "headers": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json",
+                            "type": "text",
+                            "disable": false
+                        }
+                    ],
+                    "config": {
+                        "ORIGIN": "",
+                        "USERAGENT": "",
+                        "TIMEOUT_MS": 0,
+                        "REJECT_UNAUTHORIZED": false,
+                        "FOLLOWLOCATION": true,
+                        "MAXREDIRS": -1,
+                        "HTTP_VERSION": "V2Tls"
+                    },
+                    "scripts": {
+                        "pre": "",
+                        "post": "",
+                        "test": ""
+                    },
+                    "bodies": [
+                        {
+                            "name": "Default",
+                            "meta": {
+                                "active_body_type": "application/json",
+                                "is_default": true
+                            },
+                            "body": {
+                                "application/json": {
+                                    "value": "{\n    \"roleId\":\"6253d2fb719fd66d269d285b\",\n    \"permitId\":\"6253c468c2eaa0b77a0bb1c5\"\n}",
+                                    "headers": []
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "meta": {
+                        "name": "remove permit from role",
+                        "description": "",
+                        "active_auth": "inherit",
+                        "type": "api",
+                        "version": "1.0"
+                    },
+                    "url": {
+                        "slashes": true,
+                        "protocol": "http:",
+                        "hash": "",
+                        "pathname": "/role/remove/permit",
+                        "auth": "",
+                        "host": "127.0.0.1:3000",
+                        "port": "3000",
+                        "hostname": "127.0.0.1",
+                        "password": "",
+                        "username": "",
+                        "origin": "http://127.0.0.1:3000",
+                        "href": "http://127.0.0.1:3000/role/remove/permit",
+                        "query_params": [],
+                        "path_params": []
+                    },
+                    "method": "DELETE",
+                    "headers": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json",
+                            "type": "text",
+                            "disable": false
+                        }
+                    ],
+                    "config": {
+                        "ORIGIN": "",
+                        "USERAGENT": "",
+                        "TIMEOUT_MS": 0,
+                        "REJECT_UNAUTHORIZED": false,
+                        "FOLLOWLOCATION": true,
+                        "MAXREDIRS": -1,
+                        "HTTP_VERSION": "V2Tls"
+                    },
+                    "scripts": {
+                        "pre": "",
+                        "post": "",
+                        "test": ""
+                    },
+                    "bodies": [
+                        {
+                            "name": "Default",
+                            "meta": {
+                                "active_body_type": "application/json",
+                                "is_default": true
+                            },
+                            "body": {
+                                "application/json": {
+                                    "value": "{\n    \"roleId\":\"6253d2fb719fd66d269d285b\",\n    \"permitId\":\"6253c468c2eaa0b77a0bb1c5\"\n}",
+                                    "headers": []
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "userManagements",
+            "auth": {
+                "inherit": {}
+            },
+            "scripts": {
+                "pre": "",
+                "post": "",
+                "test": ""
+            },
+            "requests": [
+                {
+                    "meta": {
+                        "name": "register",
+                        "description": "",
+                        "active_auth": "inherit",
+                        "type": "api",
+                        "version": "1.0"
+                    },
+                    "url": {
+                        "slashes": true,
+                        "protocol": "http:",
+                        "hash": "",
+                        "pathname": "/user/register",
+                        "auth": "",
+                        "host": "127.0.0.1:3000",
+                        "port": "3000",
+                        "hostname": "127.0.0.1",
+                        "password": "",
+                        "username": "",
+                        "origin": "http://127.0.0.1:3000",
+                        "href": "http://127.0.0.1:3000/user/register",
+                        "query_params": [],
+                        "path_params": []
+                    },
+                    "method": "POST",
+                    "headers": [
+                        {
+                            "key": "Content-Type",
+                            "value": "multipart/form-data",
+                            "type": "text",
+                            "disable": false
+                        }
+                    ],
+                    "config": {
+                        "ORIGIN": "",
+                        "USERAGENT": "",
+                        "TIMEOUT_MS": 0,
+                        "REJECT_UNAUTHORIZED": false,
+                        "FOLLOWLOCATION": true,
+                        "MAXREDIRS": -1,
+                        "HTTP_VERSION": "V2Tls"
+                    },
+                    "scripts": {
+                        "pre": "",
+                        "post": "",
+                        "test": ""
+                    },
+                    "bodies": [
+                        {
+                            "name": "Default",
+                            "meta": {
+                                "active_body_type": "multipart/form-data",
+                                "is_default": true
+                            },
+                            "body": {
+                                "multipart/form-data": {
+                                    "value": [
+                                        {
+                                            "key": "name",
+                                            "value": "Shinn Thant Minn",
+                                            "disable": false,
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "email",
+                                            "value": "shinthantmin32@gmail.com",
+                                            "disable": false,
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "phone",
+                                            "value": "+959952253186",
+                                            "disable": false,
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "password",
+                                            "value": "123123",
+                                            "disable": false,
+                                            "type": "text"
+                                        }
+                                    ],
+                                    "headers": []
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "meta": {
+                        "name": "Login",
+                        "description": "",
+                        "active_auth": "inherit",
+                        "type": "api",
+                        "version": "1.0"
+                    },
+                    "url": {
+                        "slashes": true,
+                        "protocol": "http:",
+                        "hash": "",
+                        "pathname": "/user",
+                        "auth": "",
+                        "host": "127.0.0.1:3000",
+                        "port": "3000",
+                        "hostname": "127.0.0.1",
+                        "password": "",
+                        "username": "",
+                        "origin": "http://127.0.0.1:3000",
+                        "href": "http://127.0.0.1:3000/user",
+                        "query_params": [],
+                        "path_params": []
+                    },
+                    "method": "POST",
+                    "headers": [
+                        {
+                            "key": "Content-Type",
+                            "value": "multipart/form-data",
+                            "type": "text",
+                            "disable": false
+                        }
+                    ],
+                    "config": {
+                        "ORIGIN": "",
+                        "USERAGENT": "",
+                        "TIMEOUT_MS": 0,
+                        "REJECT_UNAUTHORIZED": false,
+                        "FOLLOWLOCATION": true,
+                        "MAXREDIRS": -1,
+                        "HTTP_VERSION": "V2Tls"
+                    },
+                    "scripts": {
+                        "pre": "",
+                        "post": "",
+                        "test": ""
+                    },
+                    "bodies": [
+                        {
+                            "name": "shin",
+                            "body": {
+                                "multipart/form-data": {
+                                    "value": [
+                                        {
+                                            "key": "email",
+                                            "value": "sharshar@gmail.com",
+                                            "disable": false,
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "password",
+                                            "value": "123123",
+                                            "disable": false,
+                                            "type": "text"
+                                        }
+                                    ],
+                                    "headers": []
+                                }
+                            },
+                            "meta": {
+                                "is_default": false,
+                                "active_body_type": "multipart/form-data"
+                            }
+                        },
+                        {
+                            "name": "Default",
+                            "meta": {
+                                "active_body_type": "multipart/form-data",
+                                "is_default": true
+                            },
+                            "body": {
+                                "multipart/form-data": {
+                                    "value": [
+                                        {
+                                            "key": "email",
+                                            "value": "htethtet@gmail.com",
+                                            "disable": false,
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "password",
+                                            "value": "123123",
+                                            "disable": false,
+                                            "type": "text"
+                                        }
+                                    ],
+                                    "headers": []
+                                }
+                            }
+                        },
+                        {
+                            "name": "htet",
+                            "body": {
+                                "multipart/form-data": {
+                                    "value": [
+                                        {
+                                            "key": "email",
+                                            "value": "shinthantmin32@gmail.com",
+                                            "disable": false,
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "password",
+                                            "value": "123123",
+                                            "disable": false,
+                                            "type": "text"
+                                        }
+                                    ],
+                                    "headers": []
+                                }
+                            },
+                            "meta": {
+                                "is_default": false,
+                                "active_body_type": "multipart/form-data"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "meta": {
+                        "name": "add role with permission",
+                        "description": "",
+                        "active_auth": "bearer",
+                        "type": "api",
+                        "version": "1.0"
+                    },
+                    "url": {
+                        "slashes": true,
+                        "protocol": "http:",
+                        "hash": "",
+                        "pathname": "/user/add/role",
+                        "auth": "",
+                        "host": "127.0.0.1:3000",
+                        "port": "3000",
+                        "hostname": "127.0.0.1",
+                        "password": "",
+                        "username": "",
+                        "origin": "http://127.0.0.1:3000",
+                        "href": "http://127.0.0.1:3000/user/add/role",
+                        "query_params": [],
+                        "path_params": []
+                    },
+                    "method": "POST",
+                    "headers": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json",
+                            "type": "text",
+                            "disable": false
+                        }
+                    ],
+                    "config": {
+                        "ORIGIN": "",
+                        "USERAGENT": "",
+                        "TIMEOUT_MS": 0,
+                        "REJECT_UNAUTHORIZED": false,
+                        "FOLLOWLOCATION": true,
+                        "MAXREDIRS": -1,
+                        "HTTP_VERSION": "V2Tls"
+                    },
+                    "scripts": {
+                        "pre": "",
+                        "post": "",
+                        "test": ""
+                    },
+                    "auth": {
+                        "bearer": {
+                            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjU0ZDFlMmJjZjY3YTE4ZmNlODRhNzYiLCJuYW1lIjoiSHRldCBLeWF3dCBMaW5uIiwiZW1haWwiOiJodGV0aHRldEBnbWFpbC5jb20iLCJwaG9uZSI6Iis5NTk0MjAzMDYwODUiLCJyb2xlIjpbeyJfaWQiOiI2MjU0ZDFlMWJjZjY3YTE4ZmNlODRhNzAiLCJuYW1lIjoiQ0ZPIiwicGVybWl0IjpbXX1dLCJwZXJtaXQiOltdLCJjcmVhdGUiOiIyMDIyLTA0LTEyVDAxOjEyOjAxLjgyNVoiLCJfX3YiOjAsImlhdCI6MTY0OTcyODgxMCwiZXhwIjoxNjQ5NzMyNDEwfQ.yEe1sFPpQkF9GKdVQzbOqDAUh56p5imnzZp5hm39oxo",
+                            "prefix": ""
+                        }
+                    },
+                    "bodies": [
+                        {
+                            "name": "Default",
+                            "meta": {
+                                "active_body_type": "application/json",
+                                "is_default": true
+                            },
+                            "body": {
+                                "application/json": {
+                                    "value": "{\n    \"userId\":\"6254d1e2bcf67a18fce84a78\",\n    \"roleId\":\"6254d1e1bcf67a18fce84a72\"\n}",
+                                    "headers": []
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "meta": {
+                        "name": "permit add by permission",
+                        "description": "",
+                        "active_auth": "bearer",
+                        "type": "api",
+                        "version": "1.0"
+                    },
+                    "url": {
+                        "slashes": true,
+                        "protocol": "http:",
+                        "hash": "",
+                        "pathname": "/user/add/permit",
+                        "auth": "",
+                        "host": "127.0.0.9:3000",
+                        "port": "3000",
+                        "hostname": "127.0.0.9",
+                        "password": "",
+                        "username": "",
+                        "origin": "http://127.0.0.9:3000",
+                        "href": "http://127.0.0.9:3000/user/add/permit",
+                        "query_params": [],
+                        "path_params": []
+                    },
+                    "method": "POST",
+                    "headers": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json",
+                            "type": "text",
+                            "disable": false
+                        }
+                    ],
+                    "config": {
+                        "ORIGIN": "",
+                        "USERAGENT": "",
+                        "TIMEOUT_MS": 0,
+                        "REJECT_UNAUTHORIZED": false,
+                        "FOLLOWLOCATION": true,
+                        "MAXREDIRS": -1,
+                        "HTTP_VERSION": "V2Tls"
+                    },
+                    "scripts": {
+                        "pre": "",
+                        "post": "",
+                        "test": ""
+                    },
+                    "auth": {
+                        "bearer": {
+                            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjU0ZDFlMmJjZjY3YTE4ZmNlODRhNzgiLCJuYW1lIjoiU2hhciBOYXRoYSBMaW5uIiwiZW1haWwiOiJzaGFyc2hhckBnbWFpbC5jb20iLCJwaG9uZSI6Iis5NTkxMjMxMjMxMjMiLCJyb2xlIjpbeyJfaWQiOiI2MjU0ZDFlMWJjZjY3YTE4ZmNlODRhNzIiLCJuYW1lIjoiTWFuYWdlciIsInBlcm1pdCI6W119XSwicGVybWl0IjpbXSwiY3JlYXRlIjoiMjAyMi0wNC0xMlQwMToxMjowMS44MjVaIiwiX192IjowLCJpYXQiOjE2NDk3Mzc5OTYsImV4cCI6MTY0OTc0MTU5Nn0.Afa36oQkkYi7pi31yHp0BZu5sWPxUka20A3l9SlwO8U",
+                            "prefix": ""
+                        }
+                    },
+                    "bodies": [
+                        {
+                            "name": "Default",
+                            "meta": {
+                                "active_body_type": "application/json",
+                                "is_default": true
+                            },
+                            "body": {
+                                "application/json": {
+                                    "value": "{\n    \"userId\":\"6254d1e2bcf67a18fce84a76\",\n    \"permitId\":\"6254d1e1bcf67a18fce84a65\"\n}",
+                                    "headers": []
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "meta": {
+                        "name": "remove permit by permission",
+                        "description": "",
+                        "active_auth": "bearer",
+                        "type": "api",
+                        "version": "1.0"
+                    },
+                    "url": {
+                        "slashes": true,
+                        "protocol": "http:",
+                        "hash": "",
+                        "pathname": "/user/remove/permit",
+                        "auth": "",
+                        "host": "127.0.0.1:3000",
+                        "port": "3000",
+                        "hostname": "127.0.0.1",
+                        "password": "",
+                        "username": "",
+                        "origin": "http://127.0.0.1:3000",
+                        "href": "http://127.0.0.1:3000/user/remove/permit",
+                        "query_params": [],
+                        "path_params": []
+                    },
+                    "method": "DELETE",
+                    "headers": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json",
+                            "type": "text",
+                            "disable": false
+                        }
+                    ],
+                    "config": {
+                        "ORIGIN": "",
+                        "USERAGENT": "",
+                        "TIMEOUT_MS": 0,
+                        "REJECT_UNAUTHORIZED": false,
+                        "FOLLOWLOCATION": true,
+                        "MAXREDIRS": -1,
+                        "HTTP_VERSION": "V2Tls"
+                    },
+                    "scripts": {
+                        "pre": "",
+                        "post": "",
+                        "test": ""
+                    },
+                    "auth": {
+                        "bearer": {
+                            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjU0ZDFlMmJjZjY3YTE4ZmNlODRhNzgiLCJuYW1lIjoiU2hhciBOYXRoYSBMaW5uIiwiZW1haWwiOiJzaGFyc2hhckBnbWFpbC5jb20iLCJwaG9uZSI6Iis5NTkxMjMxMjMxMjMiLCJyb2xlIjpbeyJfaWQiOiI2MjU0ZDFlMWJjZjY3YTE4ZmNlODRhNzIiLCJuYW1lIjoiTWFuYWdlciIsInBlcm1pdCI6W119XSwicGVybWl0IjpbXSwiY3JlYXRlIjoiMjAyMi0wNC0xMlQwMToxMjowMS44MjVaIiwiX192IjowLCJpYXQiOjE2NDk3Mzc5OTYsImV4cCI6MTY0OTc0MTU5Nn0.Afa36oQkkYi7pi31yHp0BZu5sWPxUka20A3l9SlwO8U",
+                            "prefix": ""
+                        }
+                    },
+                    "bodies": [
+                        {
+                            "name": "Default",
+                            "meta": {
+                                "active_body_type": "application/json",
+                                "is_default": true
+                            },
+                            "body": {
+                                "application/json": {
+                                    "value": "{\n    \"userId\":\"6254d1e2bcf67a18fce84a76\",\n    \"permitId\":\"6254d1e1bcf67a18fce84a65\"\n}",
+                                    "headers": []
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "meta": {
+                        "name": "all user from server",
+                        "description": "",
+                        "active_auth": "inherit",
+                        "type": "api",
+                        "version": "1.0"
+                    },
+                    "url": {
+                        "slashes": true,
+                        "protocol": "http:",
+                        "hash": "",
+                        "pathname": "/user",
+                        "auth": "",
+                        "host": "127.0.0.1:3000",
+                        "port": "3000",
+                        "hostname": "127.0.0.1",
+                        "password": "",
+                        "username": "",
+                        "origin": "http://127.0.0.1:3000",
+                        "href": "http://127.0.0.1:3000/user",
+                        "query_params": [],
+                        "path_params": []
+                    },
+                    "method": "GET",
+                    "headers": [],
+                    "config": {
+                        "ORIGIN": "",
+                        "USERAGENT": "",
+                        "TIMEOUT_MS": 0,
+                        "REJECT_UNAUTHORIZED": false,
+                        "FOLLOWLOCATION": true,
+                        "MAXREDIRS": -1,
+                        "HTTP_VERSION": "V2Tls"
+                    },
+                    "scripts": {
+                        "pre": "",
+                        "post": "",
+                        "test": ""
+                    },
+                    "bodies": [
+                        {
+                            "name": "Default",
+                            "meta": {
+                                "active_body_type": "noBody",
+                                "is_default": true
+                            },
+                            "body": {}
+                        }
+                    ]
+                },
+                {
+                    "meta": {
+                        "name": "remove role with permitt",
+                        "description": "",
+                        "active_auth": "bearer",
+                        "type": "api",
+                        "version": "1.0"
+                    },
+                    "url": {
+                        "slashes": true,
+                        "protocol": "http:",
+                        "hash": "",
+                        "pathname": "/user/remove/role",
+                        "auth": "",
+                        "host": "127.0.0.1:3000",
+                        "port": "3000",
+                        "hostname": "127.0.0.1",
+                        "password": "",
+                        "username": "",
+                        "origin": "http://127.0.0.1:3000",
+                        "href": "http://127.0.0.1:3000/user/remove/role",
+                        "query_params": [],
+                        "path_params": []
+                    },
+                    "method": "DELETE",
+                    "headers": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json",
+                            "type": "text",
+                            "disable": false
+                        }
+                    ],
+                    "config": {
+                        "ORIGIN": "",
+                        "USERAGENT": "",
+                        "TIMEOUT_MS": 0,
+                        "REJECT_UNAUTHORIZED": false,
+                        "FOLLOWLOCATION": true,
+                        "MAXREDIRS": -1,
+                        "HTTP_VERSION": "V2Tls"
+                    },
+                    "scripts": {
+                        "pre": "",
+                        "post": "",
+                        "test": ""
+                    },
+                    "auth": {
+                        "bearer": {
+                            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjU0ZDFlMmJjZjY3YTE4ZmNlODRhNzgiLCJuYW1lIjoiU2hhciBOYXRoYSBMaW5uIiwiZW1haWwiOiJzaGFyc2hhckBnbWFpbC5jb20iLCJwaG9uZSI6Iis5NTkxMjMxMjMxMjMiLCJyb2xlIjpbeyJfaWQiOiI2MjU0ZDFlMWJjZjY3YTE4ZmNlODRhNzIiLCJuYW1lIjoiTWFuYWdlciIsInBlcm1pdCI6W119XSwicGVybWl0IjpbXSwiY3JlYXRlIjoiMjAyMi0wNC0xMlQwMToxMjowMS44MjVaIiwiX192IjowLCJpYXQiOjE2NDk3Mzc5OTYsImV4cCI6MTY0OTc0MTU5Nn0.Afa36oQkkYi7pi31yHp0BZu5sWPxUka20A3l9SlwO8U",
+                            "prefix": ""
+                        }
+                    },
+                    "bodies": [
+                        {
+                            "name": "Default",
+                            "meta": {
+                                "active_body_type": "application/json",
+                                "is_default": true
+                            },
+                            "body": {
+                                "application/json": {
+                                    "value": "{\n    \"userId\":\"6254d1e2bcf67a18fce84a78\",\n    \"roleId\":\"6254d1e1bcf67a18fce84a72\"\n}",
+                                    "headers": []
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "requests": [],
+    "environments": [
+        {
+            "name": "Development",
+            "variables": {
+                "variable_name": "variable_value"
+            }
+        },
+        {
+            "name": "Production",
+            "variables": {
+                "variable_name": "variable_value"
+            }
+        }
+    ]
+}
